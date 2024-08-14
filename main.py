@@ -1,19 +1,34 @@
-class Bank_of_nigeria:
-    def __init__(self, first_name, last_name, age, address, hasAccount, amount, amount_savings):
-        self.first_name = first_name
-        self.last_name = last_name
+class Bank_Of_Nigeria: #Class for bank
+
+    #Constructor for the class, takes in name, age and address. Sets default values for other parameters
+    def __init__(self, name, age, address): 
+        self.name = name
         self.age = age
         self.address = address
-        self.hasAccount = hasAccount
-        self.amount = amount
-        self.amount_savings = amount_savings
-        self.investment_money = 2000
+        self.verified_user = True
+        self.money_in_checking = 0
+        self.money_in_savings = 0
+        self.investment_money = 50
 
     def user_info(self):
+
+        print("~ Bank Of Nigeria ~") #Title of the bank
+        print() #empty line, aesthetic purposes
+
+        #try block to catch any errors that may occur
         try:
-            print(f'Users name: {self.last_name} Age: {self.age}, Address: {self.address}, Active Acount: {self.hasAccount}, Checking Account: {self.amount} $, Savings Account: {self.amount_savings} $, Investments Account: {self.investment_money} $')
+            
+            #prints the user's information
+            print(f'Users Name: {self.name}')
+            print(f"Age: {self.age}")
+            print(f"Address: {self.address}")
+            print(f"Checking Account: {self.money_in_checking} $")
+            print(f"Savings Account: {self.money_in_savings} $")
+            print(f"Investments Account: {self.investment_money} $")
+            print(f"Verified User: {self.verified_user}")
+
         except Exception as e:
-            print(e)
+            print(e) #prints the error that occurred.
 
     def checking_account(self):
         print(f'Checking: {self.amount} $')
@@ -31,22 +46,6 @@ class Bank_of_nigeria:
         self.amount -= amount
 
 
-Tobi_Account = Bank_of_nigeria('Darron', 'Dasher', 30, 'maryland', True, 200, 3000)
+Bank_Account = Bank_Of_Nigeria('Darron Nigwo', 5, '1205 lifton ave, Banana Island, Lagos, Nigeria')
 
-Tobi_Account.user_info()
-
-Tobi_Account.add_money(300)
-
-Tobi_Account.checking_account()
-
-Tobi_Account.spend_money(30)
-
-Tobi_Account.checking_account()
-
-Tobi_Account.user_info()
-
-print("what is your name: ")
-
-Input = input()
-
-print(f"hello {Input}")
+Bank_Account.user_info()
