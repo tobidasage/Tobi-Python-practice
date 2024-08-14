@@ -30,23 +30,10 @@ class Bank_of_nigeria:
     def spend_money(self, amount):
         self.amount -= amount
 
+    def transfer_money(self, amount, account):
+        pass
+
 
 Tobi_Account = Bank_of_nigeria('Darron', 'Dasher', 30, 'maryland', True, 200, 3000)
 
 Tobi_Account.user_info()
-
-Tobi_Account.add_money(300)
-
-Tobi_Account.checking_account()
-
-Tobi_Account.spend_money(30)
-
-Tobi_Account.checking_account()
-
-Tobi_Account.user_info()
-
-print("what is your name: ")
-
-Input = input()
-
-print(f"hello {Input}")
