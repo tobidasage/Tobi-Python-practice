@@ -10,14 +10,14 @@ class Bank_Of_Nigeria: #Class for bank
         self.money_in_savings = 0
         self.investment_money = 50
 
-    def user_info(self):
+    def get_user_info(self):
 
         print("~ Bank Of Nigeria ~") #Title of the bank
         print() #empty line, aesthetic purposes
 
         #try block to catch any errors that may occur
         try:
-            
+
             #prints the user's information
             print(f'Users Name: {self.name}')
             print(f"Age: {self.age}")
@@ -29,23 +29,93 @@ class Bank_Of_Nigeria: #Class for bank
 
         except Exception as e:
             print(e) #prints the error that occurred.
+            
+        print()
 
-    def checking_account(self):
-        print(f'Checking: {self.amount} $')
+    def get_financial_info(self):
+
+        print("~ Bank Of Nigeria ~") #Title of the bank
+        print()
+
+        try:
+
+            #prints the financial information specifically
+            print(f"User {self.name}'s financial statement")
+            print(f"Checking Account: {self.money_in_checking} $")
+            print(f"Savings Account: {self.money_in_savings} $")
+            print(f"Investments Account: {self.investment_money} $")
+
+        except Exception as e:
+            print(e) #prints the error that occurred.
+            
+        print()
         pass
 
-    def savings_account(self):
-        print(f'Savings: {self.amount_savings} $')
+        #Method to get the checking account information
+    def get_checking_info(self):
+        print(f'Checking: {self.money_in_checking} $')
+        print()
         pass
 
-    def add_money(self, amount):
-        self.amount += amount
-        return self.amount
+        #Method to get the savings account information
+    def get_savings_info(self):
+        print(f'Savings: {self.money_in_savings} $')
+        print()
+        pass
+    
+    def deposit_money(self, amount):
+        
+        try:
+            self.money_in_checking += amount #adds the amount to the checking account
+            
+            print(f"Successfully deposited {amount} $ to checking account for {self.name}")
+            print()
+            print(f"new checking total is: {self.money_in_checking}")
+        except Exception as e:
+            print(e)
+            
+        print()
+            
+        pass
+    
+    def withdraw_money(self, amount):
+        
+        try:
+            self.money_in_checking -= amount #subtracts the amount from the checking account
 
-    def spend_money(self, amount):
-        self.amount -= amount
+            print(f"Successfully withdrew {amount} $ from checking account for {self.name}")
+            print()
+            print(f"new checking total is: {self.money_in_checking}")
+        except Exception as e:
+            print(e)
+            
+        print()
+        
+        pass
+        
 
+Darron_Account = Bank_Of_Nigeria('Darron Nigwo', 5, '1205 lifton ave, Banana Island, Lagos, Nigeria')
 
-Bank_Account = Bank_Of_Nigeria('Darron Nigwo', 5, '1205 lifton ave, Banana Island, Lagos, Nigeria')
+'''
+Darron_Account.get_user_info()
 
-Bank_Account.user_info()
+Darron_Account.get_financial_info()
+
+Darron_Account.get_checking_info()
+
+Darron_Account.get_savings_info()
+'''
+
+Darron_Account.deposit_money(100)
+
+Darron_Account.withdraw_money(50)
+
+'''
+Darron_Account.get_user_info()
+
+Darron_Account.get_financial_info()
+
+Darron_Account.get_checking_info()
+
+Darron_Account.get_savings_info()
+'''
