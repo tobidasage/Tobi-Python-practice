@@ -30,10 +30,25 @@ class Bank_of_nigeria:
     def spend_money(self, amount):
         self.amount -= amount
 
-    def transfer_money(self, amount, account):
-        pass
+    def transfer_money(self, amount):
+
+        if amount <= self.amount:
+            self.amount -= amount
+            self.amount_savings += amount
+            print(f'You have transfered {amount}$ from your checking to your savings account')
+        elif amount > self.amount:
+            print('Insufficient funds')
 
 
-Tobi_Account = Bank_of_nigeria('Darron', 'Dasher', 30, 'maryland', True, 200, 3000)
 
-Tobi_Account.user_info()
+darron_Account = Bank_of_nigeria('Darron', 'Dasher', 30, 'maryland', True, 500, 3000)
+
+darron_Account.user_info()
+
+darron_Account.transfer_money(600)
+
+darron_Account.user_info()
+
+darron_Account.checking_account()
+
+darron_Account.savings_account()
