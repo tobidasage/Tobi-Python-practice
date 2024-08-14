@@ -92,30 +92,34 @@ class Bank_Of_Nigeria: #Class for bank
         print()
         
         pass
+    
+    def transfer_money(self, amount):
+        
+        try:
+            if amount <= self.money_in_checking:
+                
+                print(f"Now transfering {amount} $ to savings account for {self.name}")
+                
+                self.money_in_checking -= amount #subtracts the amount from the checking account
+                self.money_in_savings += amount  #adds the amount to savings account
+                
+                self.get_checking_info() #calls the updated checking account information
+                self.get_savings_info() #calls the updated savings account information
+                
+                print()
+                print(f"Successfully transferred {amount} $ from checking account to savings account for {self.name}")
+            else:
+                print("Insufficient funds in checking account")
+        except Exception as e:
+            print(e)
+            
+        print()
+        
+        pass
         
 
 Darron_Account = Bank_Of_Nigeria('Darron Nigwo', 5, '1205 lifton ave, Banana Island, Lagos, Nigeria')
 
-'''
+Darron_Account.deposit_money(400)
+
 Darron_Account.get_user_info()
-
-Darron_Account.get_financial_info()
-
-Darron_Account.get_checking_info()
-
-Darron_Account.get_savings_info()
-'''
-
-Darron_Account.deposit_money(100)
-
-Darron_Account.withdraw_money(50)
-
-'''
-Darron_Account.get_user_info()
-
-Darron_Account.get_financial_info()
-
-Darron_Account.get_checking_info()
-
-Darron_Account.get_savings_info()
-'''
