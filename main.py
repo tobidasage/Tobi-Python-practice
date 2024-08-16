@@ -1,7 +1,7 @@
 class Bank_Of_Nigeria: #Class for bank
 
     #Constructor for the class, takes in name, age and address. Sets default values for other parameters
-    def __init__(self, name, age, address): 
+    def __init__(self, name: str, age: int, address: str): 
         self.name = name
         self.age = age
         self.address = address
@@ -10,7 +10,7 @@ class Bank_Of_Nigeria: #Class for bank
         self.money_in_savings = 0
         self.investment_money = 50
 
-    def get_user_info(self):
+    def get_user_info(self) -> None:
 
         print("~ Bank Of Nigeria ~") #Title of the bank
         print() #empty line, aesthetic purposes
@@ -63,7 +63,7 @@ class Bank_Of_Nigeria: #Class for bank
         print()
         pass
     
-    def deposit_money(self, amount):
+    def deposit_money(self, amount: float):
         
         try:
             self.money_in_checking += amount #adds the amount to the checking account
@@ -78,7 +78,7 @@ class Bank_Of_Nigeria: #Class for bank
             
         pass
     
-    def withdraw_money(self, amount):
+    def withdraw_money(self, amount: float):
         
         try:
             self.money_in_checking -= amount #subtracts the amount from the checking account
@@ -93,7 +93,7 @@ class Bank_Of_Nigeria: #Class for bank
         
         pass
     
-    def transfer_money(self, amount):
+    def transfer_money(self, amount: float):
         
         try:
             if amount <= self.money_in_checking:
